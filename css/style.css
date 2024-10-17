@@ -1,18 +1,3 @@
-body {
-
-    background-image: url(../img/Background.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover; 
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Centralizar o conteúdo */
-    align-items: center;
-    box-sizing: border-box;
-}
-
 :root {
     --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
@@ -31,12 +16,27 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/Background.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; 
+
+}
+    
+
 nav {
     display: block;
     display: flex;
     flex-direction: column;
-    width: 80px;
-    height: 100%;
+    width: 70px;
+
     
     background-color: #2e2e2e;
 
@@ -46,20 +46,6 @@ nav {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    
-}
-
-.content{
-   
-    padding: 20px;
-    color: whitesmoke;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow: auto;
-
-
 }
 
 .icon:hover {
@@ -75,21 +61,89 @@ nav {
   
 }
 
-.container{
-    display: flex;
-    flex-grow: 1;
-    width: 90%;
+.icon img {
+    width: 30px;
+    height: 30px;
+    margin: 10px 0;
+}
 
-    height: 100%;
-    flex-direction: row;
+.container {
+    display: flex;
+    width: calc(100% - 70px); /* Para que a largura total não exceda a tela */
+}
+
+.conversations {
+    
+    background-color: rgba(255, 255, 255, 0.1);
+   
+    overflow-y: auto;
 }
 
 
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para preencher o espaço restante */
+    padding: 20px;
+}
+
+.messages {
+    flex-grow: 1;
+    display: flex;
+    overflow-y: auto; /* Permite rolagem */
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    max-width: 70%; /* Limite a largura dos balões */
+}
+
+.you {
+    align-self: flex-end; /* Alinha à direita */
+}
+
+.reply {
+    align-self: flex-start; /* Alinha à esquerda */
+}
+
+.conversation-form-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.conversation-form-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Impede redimensionar */
+}
+
+.conversation-form-record {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.conversation-form-record:hover {
+    background-color: #0056b3;
+}
+
 .content-sidebar-title {
     font-size: 20px;
-    font-weight: 600;
-    padding: 16px; 
-     
+    padding: 30px; 
+    color: whitesmoke ;     
 }
 
 .content-messages {
@@ -101,7 +155,7 @@ nav {
 }
 .content-messages-list {
     list-style-type: none;
-    padding: 8px 0;
+    padding: 25px ;
 
 }
 .content-messages-list li {
@@ -168,68 +222,38 @@ nav {
     white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-    nav {
-        width: 15vw; /* Aumentar a barra lateral em telas menores */
-    }
-    
-    .container {
-        flex-direction: column; /* Empilhar os elementos na vertical */
-        width: 100%;
-    }
-
-    .content {
-        width: 100%;
-        padding: 10px;
-    }
-
-   
-}
-
 /* Telas muito pequenas (celulares) */
 @media (max-width: 480px) {
     nav {
         width: 20vw; /* Aumentar a barra lateral para caber melhor os ícones */
     }
 
+    .container {
+        flex-direction: column; /* Empilhar os elementos na vertical */
+        width: 100%;
+    }
 
-
-    .content-messages {
+    .conversations {
         margin-top: 8px; /* Reduzir o espaçamento */
     }
 }
 
-
-.content-messages::-webkit-scrollbar {
+/* Estilizando a barra de rolagem */
+.conversations::-webkit-scrollbar {
     width: 10px; /* Largura do scroll */
 }
 
-.content-messages::-webkit-scrollbar-track {
+.conversations::-webkit-scrollbar-track {
     background: #555; /* Cor de fundo da trilha do scroll */
     border-radius: 10px; /* Deixar os cantos arredondados */
 }
 
-.content-messages::-webkit-scrollbar-thumb {
+.conversations::-webkit-scrollbar-thumb {
     background-color: #2e2e2e; /* Cor do thumb do scroll */
     border-radius: 10px; /* Canto arredondado */
     border: 2px solid #555; /* Espaço entre o thumb e a trilha */
 }
 
-.content-messages::-webkit-scrollbar-thumb:hover {
+.conversations::-webkit-scrollbar-thumb:hover {
     background-color: #1a1a1a; /* Cor ao passar o mouse no thumb */
 }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-

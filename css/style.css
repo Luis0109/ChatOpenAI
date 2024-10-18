@@ -108,6 +108,8 @@ nav {
     flex-direction: column;
     color: var(--text-color-msg);
     padding-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
 }
 
@@ -134,7 +136,7 @@ nav {
     margin-top: 10px;
 }
 
-.conversation-form-input {
+.conversation-input {
     flex-grow: 1;
     margin-right: 10px;
     padding: 10px;
@@ -143,7 +145,7 @@ nav {
     resize: none; /* Impede redimensionar */
 }
 
-.conversation-form-record {
+.conversation-send{
     background-color: #007BFF;
     color: white;
     border: none;
@@ -152,11 +154,11 @@ nav {
     cursor: pointer;
 }
 
-.conversation-form-record:hover {
+.conversation-send:hover {
     background-color: #0056b3;
 }
 
-.content-sidebar-title {
+.content-title {
     font-size: 20px;
     padding: 30px; 
     color: var(--text-color-msg);    
@@ -212,7 +214,7 @@ nav {
     border-bottom: 1px solid var(--slate-300);
     z-index: 0;
 }
-.content-message-image {
+.content-icon-image {
     width: 32px;
     height: 32px;
     border-radius: 50%;

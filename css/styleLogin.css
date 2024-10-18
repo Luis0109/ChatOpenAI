@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+
+
+:root {
+    --bg-url: url(../img/Background.png);
+    --text-color-msg: whitesmoke;
+
+}
+
+.light{
+    --bg-url: url(../img/BackgroundLight.png);
+    --text-color-msg: black;
+
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +23,7 @@
 }
 
 body{
-    background-image: url(../img/Background.png);
+    background-image: var(--bg-url);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover; 
@@ -25,7 +40,7 @@ width: 420px;
 background-color: transparent;
 border: 2px solid rgba(255, 255, 255, 0.2);
 border-radius: 10px;
-color:whitesmoke;
+color: var(--text-color-msg);
 padding: 30px 40px;
 box-shadow: rgba(0, 0, 0, 0.3) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 backdrop-filter: blur(50px);
@@ -53,7 +68,7 @@ backdrop-filter: blur(50px);
     border-radius: 40px;
     outline: none;
     font-size: 16px;
-    color: whitesmoke;
+    color: var(--text-color-msg);
     padding: 10px 45px 20px 20px;
 
 
@@ -77,13 +92,13 @@ backdrop-filter: blur(50px);
 }
 
 .remember label input{
-    accent-color: white;
+    accent-color: var(--text-color-msg);
     margin-right: 7px ;
 }
 
 .remember a{
     text-decoration: none;
-    color: white;
+    color: var(--text-color-msg);
 
 }
 
@@ -95,7 +110,7 @@ backdrop-filter: blur(50px);
     display: inline-block;         /* Permite ajustar largura e altura */
     width: 100%;                   /* Largura total, igual ao botão */
     height: 50px;                  /* Altura de 50px */
-    background-color: whitesmoke;   /* Fundo branco */
+    background-color:var(--text-color-msg);   /* Fundo branco */
     border: none;                  /* Sem borda */
     border-radius: 40px;           /* Bordas arredondadas */
     cursor: pointer;               /* Exibe o cursor de "mãozinha" */
@@ -116,7 +131,7 @@ backdrop-filter: blur(50px);
 .login:hover{
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    color: var(--text-color-msg);
     transition: 0.5s;
 
 }
@@ -125,15 +140,23 @@ backdrop-filter: blur(50px);
     font-size: 15px;
     text-align: center;
     margin: 20px 0 15px;
+
 }
 
 .register a{
     text-decoration: none;
-    color: white;
+    color: var(--text-color-msg);
     font-weight: 600;
 }
 
 .register a:hover{
     text-decoration: underline;
 
+}
+
+.btLight{
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
 }
